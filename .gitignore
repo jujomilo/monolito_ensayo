@@ -1,0 +1,9 @@
+# Archivos y carpetas comunes a ignorar
+*.max
+*.fbx
+*.obj
+*.psd
+*.tmp
+.DS_Store
+Thumbs.db
+node_modules/
