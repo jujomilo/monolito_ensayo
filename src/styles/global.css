@@ -1,0 +1,20 @@
+/* Estilo por defecto (light) */
+body {
+    background-color: #ffffff;
+    color: #111111;
+  }
+  
+  /* Estilo dark */
+  [data-theme="dark"] body {
+    background-color: #0e0e0e;
+    color: #eeeeee;
+  }
+  
+  [data-theme="dark"] a {
+    color: #66f;
+  }
+  
+  [data-theme="light"] a {
+    color: #3245ff;
+  }
+  

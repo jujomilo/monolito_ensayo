@@ -1,0 +1,73 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Canvas_404 – Inicio">
+  <main>
+    <!-- Botón modo claro/oscuro -->
+    <button id="theme-toggle" aria-label="Cambiar tema">🌓</button>
+
+    <h1>📁 <strong>Archivo Técnico de Canvas_404</strong></h1>
+    <p>Selecciona una fase del proyecto:</p>
+
+    <ul>
+      <li><a href="/monolito">🪨 Fase 1 – Monolito de Hormigón</a></li>
+      <!-- Aquí irán futuras fases -->
+    </ul>
+  </main>
+
+  <style>
+    main {
+      padding: 2rem;
+      font-family: monospace;
+    }
+
+    #theme-toggle {
+      position: fixed;
+      top: 1rem;
+      right: 1rem;
+      font-size: 1.5rem;
+      background: none;
+      border: none;
+      cursor: pointer;
+      color: inherit;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    li a {
+      text-decoration: none;
+      color: #4f46e5;
+    }
+
+    li a:hover {
+      text-decoration: underline;
+    }
+  </style>
+
+  <script is:script>
+    const button = document.getElementById('theme-toggle');
+    const html = document.documentElement;
+    const storedTheme = localStorage.getItem('theme');
+
+    if (storedTheme === 'light') {
+      html.removeAttribute('data-theme');
+    } else {
+      html.setAttribute('data-theme', 'dark');
+    }
+
+    button.addEventListener('click', () => {
+      const isDark = html.getAttribute('data-theme') === 'dark';
+      if (isDark) {
+        html.removeAttribute('data-theme');
+        localStorage.setItem('theme', 'light');
+      } else {
+        html.setAttribute('data-theme', 'dark');
+        localStorage.setItem('theme', 'dark');
+      }
+    });
+  </script>
+</Layout>
